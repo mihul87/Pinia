@@ -45,6 +45,9 @@ export const useProductStore = defineStore("product", {
             return (price) => (
                 state.products.filter(product => product.price < price)
             )
+        },
+        lastProduct(state) {
+            return state.products.slice(-1)[0]
         }
     },
     actions: {
